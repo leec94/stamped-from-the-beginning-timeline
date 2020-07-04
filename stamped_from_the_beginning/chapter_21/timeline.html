@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['timeline']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var container = document.getElementById('timeline-tooltip');
+        var chart = new google.visualization.Timeline(container);
+        var dataTable = new google.visualization.DataTable();
+
+        dataTable.addColumn({ type: 'string', id: 'Timeline' });
+        dataTable.addColumn({ type: 'string', id: 'dummy bar label' });
+        dataTable.addColumn({ type: 'string', role: 'tooltip', p:{html:true} });
+        dataTable.addColumn({ type: 'date', id: 'Start' });
+        dataTable.addColumn({ type: 'date', id: 'End' });
+        dataTable.addRows([
+        [ 'Atticus Haygood ', 
+            null, 
+            'Methodist bishop and Emory College president Atticus Haygood <br>' + 
+            'published his popular 1881 book, "Our Brother in Black". The <br>' +
+            '“great majority of the slaves did truly love the white people,”<br>' + 
+            'Haygood presumed. White enslavers taught them labor habits, <br>' + 
+            'English, the principles of free institutions, and Christianity.<br>' + 
+            'Whites must continue the elevating legacy of slavery in a nicely<br>' + 
+            'segregated free labor society, Haygood instructed. How could wise<br>' + 
+            'Whites teach unwise Blacks if the races were separated? <br>', 
+            new Date(1881, 1, 1),  
+            new Date(1881, 12, 31) ],
+        [ 'George Washington Williams', 
+            null, 
+            'The first full-length history of African Americans by George <br>' + 
+                'Washington Williams "History of the Negro Race in America <br>' + 
+                'from 1619 to 1880" is published.', 
+            new Date(1887, 1, 1),  
+            new Date(1887, 12, 31) ],
+          [ 'George Washington Williams', 
+            null, 
+            'In 1864 tract Savage Africa, “If the women of Africa <br>' + 
+                'are brutal,” he wrote, “the men of Africa are feminine.” <br>' + 
+                'According to Williams’s assimilationist reading of history,<br>' + 
+                'freedom had facilitated Black adoption of civilized values and <br>' + 
+                'norms, of “better and purer traits of character.”', 
+            new Date(1864, 1, 1),  
+            new Date(1864, 12, 31) ],
+        [ 'Philip Alexander Bruce', 
+            null, 
+            'Philip Alexander Bruce published the most popular anti–New South <br>' + 
+            'book "The Plantation Negro as a Freeman." In this book, Bruce claimed <br>' + 
+            'that Black people, “cut off” from their civilizing White masters, had <br>' + 
+            'degenerated back into the “African type,” leading to “bold and forward” <br>' + 
+            'Black women advancing on White men, Black male criminals raping White <br>' + 
+            'women (compelling White men to lynch them), and Black parents producing <br>' + 
+            'problem children who were “less inclined to work.”', 
+            new Date(1887, 1, 1),  
+            new Date(1887, 12, 31) ],
+          [ 'President Benjamin Harrison', 
+            null, 
+            'In his First Message to Congress in 1889,<br> ' + 
+                'President Benjamin Harrison asked, “When is <br>' + 
+                '[the Negro] in fact to have those full civil <br>' + 
+                'rights which have so long been his in law?”', 
+            new Date(1889, 1, 1),  
+            new Date(1889, 12, 31) ]]);
+
+        chart.draw(dataTable);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="timeline-tooltip" style="height: 300px;"></div>
+  </body>
+</html>
